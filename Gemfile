@@ -1,16 +1,14 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
 
-# #1
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
 
-# #2
 group :development do
+  gem 'pry-rails'
   gem 'sqlite3'
 end
 
@@ -29,5 +27,5 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap-sass'
 
