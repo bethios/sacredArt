@@ -1,3 +1,123 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+body{
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: $background;
+  margin: 0px;
+  color: $blackish;
+}
+
+.content-container{
+  background: white;
+  padding: 10px;
+}
+
+nav{
+  height: 90px;
+  display: block;
+  margin: 0px;
+}
+
+.logo{
+  height: 110%;
+  display: inline;
+}
+
+.nav-li {
+  display: none;
+  float: left;
+  font-size: 0.75em;
+  text-align: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.nav-li a {
+  text-decoration: none;
+}
+
+.ion-navicon-round{
+  float:right;
+  margin-top: 40px;
+  margin-right: 5vw;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.ion-navicon-round:hover {
+  background-color: $offwhite;
+}
+
+.ion-navicon-round:hover .nav-li .nav {
+  display: block;
+}
+
+.dropdown {
+  overflow: hidden;
+}
+
+.dropdown li {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  padding: 0 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba($offwhite, 0.2);
+  z-index: 1;
+  margin-top: 5px;
+  padding: 10px 0;
+}
+
+#dropdown-mobile{
+  right: 0;
+
+}
+
+.dropdown-content a {
+  float: none;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content li {
+  float: none;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+  background-color: $offwhite;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (min-width: 884px) {
+  .ion-navicon-round {
+    display: none;
+  }
+
+  .nav-links {
+    float: right;
+    vertical-align: bottom;
+    margin-top: 65px;
+  }
+
+  .nav-li {
+    display: block;
+    font-size: 1em;
+
+  }
+}

@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SacredArt</title>
+  <title>Sacredart</title>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="content-container">
+  <%= link_to image_tag("sa_logo_small.png", :alt => "Sacred Art Logo", :class => "logo"), index_path %>
+  <i class="ion-navicon-round dropdown">
+    <ul class="nav-links dropdown-content" id="dropdown-mobile">
+      <li class="nav-li"><%= link_to "ABOUT", about_path %></li>
+      <li class="nav-li"><%= link_to "ARTISTS" %></li>
+      <li class="nav-li"><%= link_to "SHOP" %></li>
+      <li class="nav-li"><%= link_to "NEW", new_path %></li>
+      <li class="nav-li"><%= link_to "FAQ", faq_path %></li>
+      <li class="nav-li"><%= link_to "SUBMISSIONS", submissions_path %></li>
+      <li class="nav-li"><%= link_to "CONTACT", contact_path %></li>
+    </ul>
+  </i>
+  <ul class="nav-links">
+    <li class="nav-li"><%= link_to "ABOUT", about_path %></li>
+    <li class="dropdown nav-li"><%= link_to "ARTISTS" %>
+      <div class="dropdown-content">
+        <%= link_to "BEAUTY" %>
+        <%= link_to "CERAMICS AND GLASS" %>
+        <%= link_to "FIBER AND WEARABLES" %>
+        <%= link_to "GRAPHIC ART" %>
+        <%= link_to "HOME" %>
+        <%= link_to "ILLUSTRATION" %>
+        <%= link_to "JEWELRY" %>
+        <%= link_to "PRINTMAKING" %>
+        <%= link_to "SEASONAL" %>
+        <%= link_to "STATIONARY AND PAPER" %>
+        <%= link_to "WOODWORKING" %>
+      </div>
+    </li>
+    <li class="nav-li"><%= link_to "SHOP" %></li>
+    <li class="nav-li"><%= link_to "NEW", new_path %></li>
+    <li class="nav-li"><%= link_to "FAQ", faq_path %></li>
+    <li class="nav-li"><%= link_to "SUBMISSIONS", submissions_path %></li>
+    <li class="nav-li"><%= link_to "CONTACT", contact_path %></li>
+  </ul>
+</nav>
 
 <%= yield %>
 
 </body>
 </html>
+
