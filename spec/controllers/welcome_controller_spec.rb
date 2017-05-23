@@ -1,0 +1,45 @@
+require 'rails_helper'
+
+RSpec.describe WelcomeController, type: :controller do
+  describe "GET index" do
+    it "renders the index template" do
+      get :index
+      expect(response).to render_template("index")
+    end
+  end
+
+  describe "GET about" do
+    it "renders the about template" do
+      get :about
+      expect(response).to render_template("about")
+    end
+  end
+
+  describe "GET faq" do
+    it "renders the about template" do
+      get :faq
+      expect(response).to render_template("about")
+    end
+  end
+
+  describe "GET contact" do
+    it "renders the about template" do
+      get :contact
+      expect(response).to render_template("about")
+    end
+  end
+
+  describe "GET new" do
+    it "renders the about template" do
+      get :new
+      expect(response).to render_template("about")
+    end
+  end
+
+  describe "GET submissions" do
+    it "renders the about template" do
+      get :submissions
+      expect(response).to render_template("about")
+    end
+  end
+end
