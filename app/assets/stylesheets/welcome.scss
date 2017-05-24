@@ -11,9 +11,35 @@
   overflow: scroll;
 }
 
+.jumbotron{
+  background-image: image_url("shop.jpg") ;
+  background-size: cover;
+  height: 60vh;
+  background-position: bottom;
+}
+
+.jumbotron h1{
+  text-align: center;
+  background-color: rgba($offwhite, 0.7);
+  padding: 12px;
+  width: 100%;
+  vertical-align: center;
+  margin-top: 18vh;
+}
+
+.flex-container {
+  display:flex;
+  align-items: center;
+}
+
 @media screen and (min-width: 884px) {
   .newspaper{
     columns: 2;
     column-gap: 30px;
   }
+
+
 }
+
+
+
