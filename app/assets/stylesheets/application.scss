@@ -24,11 +24,15 @@ body{
   background-color: $background;
   margin: 0px;
   color: $blackish;
+  overflow: scroll;
 }
 
 .content-container{
+  box-sizing: border-box;
   background: white;
-  padding: 10px;
+  color: $blackish;
+  padding: 20px;
+  margin: 15px;
 }
 
 nav{
@@ -48,9 +52,13 @@ nav{
   float: left;
   font-size: 1em;
   text-align: center;
-  padding: 8px 16px;
+  padding: 0 16px;
   text-decoration: none;
   list-style: none;
+}
+
+.nav-links{
+  margin-bottom: 0px;
 }
 
 .nav-li a {
@@ -92,7 +100,7 @@ nav{
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba($offwhite, 0.2);
-  z-index: 1;
+  z-index: 50;
   margin-top: 5px;
   padding: 10px 0;
 }
@@ -143,6 +151,7 @@ nav{
 
 .footer-col{
   margin: 25px 0 10px 0;
+  bottom: 0;
 }
 
 .footer-col:not(:last-child){
@@ -156,9 +165,6 @@ div.footer{
   font-size: 1.2em;
   font-weight:bold;
   padding: 10px;
-  min-height: 200px;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }
 

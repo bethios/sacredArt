@@ -1,2 +1,19 @@
 @import 'variables';
 
+.who-we-are{
+  width: auto;
+  margin: auto;
+}
+
+.who-we-are p{
+  font-size: 1.25em;
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+@media screen and (min-width: 884px) {
+  .newspaper{
+    columns: 2;
+    column-gap: 30px;
+  }
+}
