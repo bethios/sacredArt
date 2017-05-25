@@ -76,7 +76,7 @@ nav{
 }
 
 .ion-navicon-round:hover {
-  background-color: $offwhite;
+  background-color: transparent;
 }
 
 .ion-navicon-round:hover .nav-li .nav {
@@ -85,13 +85,15 @@ nav{
 
 .dropdown-parent {
   overflow: hidden;
+  padding-bottom: 20px;
+  background-color: transparent;
 }
 
 .dropdown-parent li {
   border: none;
   outline: none;
   background-color: inherit;
-  padding: 0 5px;
+  padding: 0px 5px;
 }
 
 .dropdown-body {
