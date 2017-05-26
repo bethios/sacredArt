@@ -49,4 +49,26 @@ RSpec.feature "Welcome", :type => :feature do
     end
   end
 
+  describe "visit FAQ page" do
+    context "goes to FAQ page and accesses answers" do
+      it "shows images" do
+        visit '/faq'
+        page.has_css?('row .side-images', visible: :show)
+      end
+      it "has questions visible" do
+        visit '/faq'
+        expect(page).to have_content('What is your return policy?')
+      end
+      it "has answers hidden" do
+        page.has_css?('#faq1', visible: :hidden)
+      end
+      it "has answers visible on click" do
+        visit '/faq'
+        click_on('What is your return policy?')
+        page.has_css?('#faq1', visible: :show)
+
+      end
+    end
+  end
+
 end
