@@ -27,10 +27,23 @@
   margin-top: 18vh;
 }
 
+.side-images{
+  display: none;
+}
+
+.side-image{
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (min-width: 884px) {
   .newspaper{
     columns: 2;
     column-gap: 30px;
+  }
+
+  .side-images{
+    display: block;
   }
 
 

@@ -25,6 +25,11 @@ body{
   margin: 0px;
   color: $blackish;
   overflow: scroll;
+  box-sizing: border-box;
+}
+
+.text-container p{
+  font-size: 1.5em;
 }
 
 .content-container{
@@ -33,6 +38,14 @@ body{
   color: $blackish;
   padding: 20px;
   margin: 15px;
+}
+
+.text-container{
+  padding: 20px 30px;
+}
+
+strong{
+  font-weight: 800;
 }
 
 nav{
@@ -192,6 +205,8 @@ div.footer{
     font-size: 1.3em;
   }
 
-
+  .row{
+    margin: 20px;
+  }
 }
 

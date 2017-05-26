@@ -36,4 +36,17 @@ RSpec.feature "Welcome", :type => :feature do
     end
   end
 
+  describe "visit about page" do
+    context "goes to about page" do
+      it "shows images" do
+        visit '/about'
+        page.has_css?('row .side-images', visible: :show)
+      end
+      it "has about text" do
+        visit '/about'
+        page.has_css?('row .col-sm-9 .text-container h1', text: 'OUR VISION')
+      end
+    end
+  end
+
 end
