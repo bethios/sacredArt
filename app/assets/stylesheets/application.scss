@@ -38,7 +38,6 @@ body{
 .content-container{
   box-sizing: border-box;
   background: white;
-  color: $blackish;
   padding: 20px;
   margin: 15px;
 }
@@ -52,9 +51,8 @@ strong{
 }
 
 nav{
-  height: 90px;
+  height: 70px;
   display: block;
-  margin: 0px;
   background-color: white;
 }
 
@@ -85,7 +83,7 @@ nav{
 
 .ion-navicon-round{
   float:right;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-right: 5vw;
   font-size: 2.5em;
   padding: 10px;
@@ -125,7 +123,7 @@ nav{
 
 #dropdown-mobile{
   right: 0;
-
+  font-size: 0.6em;
 }
 
 .dropdown-body a {
@@ -195,6 +193,10 @@ div.footer{
 @media screen and (min-width: 884px) {
   .ion-navicon-round {
     display: none;
+  }
+
+  nav {
+    height: 90px;
   }
 
   .nav-links {
