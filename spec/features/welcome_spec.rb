@@ -71,4 +71,35 @@ RSpec.feature "Welcome", :type => :feature do
     end
   end
 
+  describe "visit CONTACT page" do
+    context "goes to Contact page and shows info" do
+      it "shows address" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 .contact', text: "VISIT")
+      end
+      it "shows map in iframe" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 iframe', visible: :show)
+      end
+      it "shows email address" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 div', text: "GENERAL INQUIRIES:")
+      end
+      it "shows social media icons" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 div', class: 'social ion-social-twitter')
+        page.has_css?('row .col-sm-6 div', class: 'social ion-social-facebook')
+        page.has_css?('row .col-sm-6 div', class: 'social ion-social-instagram')
+      end
+      it "shows store hours" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 div', text: "HOURS")
+      end
+      it "has newsletter template" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 div', text: "GET OUR NEWSLETTER" )
+      end
+    end
+  end
+
 end

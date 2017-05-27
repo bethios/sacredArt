@@ -31,23 +31,25 @@ body{
   box-sizing: border-box;
 }
 
-.text-container p{
-  font-size: 1.5em;
-}
-
 .content-container{
   box-sizing: border-box;
   background: white;
   padding: 20px;
-  margin: 15px;
+  margin: 15px 0;
 }
 
 .text-container{
+  @extend .content-container;
   padding: 20px 30px;
+}
+
+.text-container p{
+  font-size: 1.3em;
 }
 
 strong{
   font-weight: 800;
+  border-bottom: 1px $accent solid;
 }
 
 nav{
@@ -89,11 +91,11 @@ nav{
   padding: 10px;
 }
 
-.ion-navicon-round:hover {
+.ion-navicon-round:active {
   background-color: transparent;
 }
 
-.ion-navicon-round:hover .nav-li .nav {
+.ion-navicon-round:active .nav-li .nav {
   display: block;
 }
 
@@ -154,9 +156,13 @@ nav{
 }
 
 .mc-field-group input{
-  width: 250px;
+  min-width: 250px;
   border-radius: 5%;
   color: $blackish
+}
+
+iframe{
+  border: none;
 }
 
 .button{
@@ -164,6 +170,8 @@ nav{
   margin: 8px;
   font-size: 1.1em;
   background-color: $slate;
+  color: white;
+
 }
 
 .footer-col{
@@ -171,8 +179,12 @@ nav{
   bottom: 0;
 }
 
-.footer-col:not(:last-child){
-  border-bottom: 1px $accent solid;
+.footer .social {
+  color: white;
+}
+
+.footer .social:hover{
+  color: $background;
 }
 
 div.footer{

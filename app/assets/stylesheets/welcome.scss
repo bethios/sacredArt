@@ -45,6 +45,20 @@
   font-size: 1.3em;
 }
 
+.social{
+  font-size: 2.85em;
+  padding: 0 10px;
+  color: $blackish;
+}
+
+.social:hover{
+  color: $accent
+}
+
+iframe{
+  width: 100%;
+  height: 73vh;
+}
 @media screen and (min-width: 884px) {
   .newspaper{
     columns: 2;
