@@ -102,4 +102,17 @@ RSpec.feature "Welcome", :type => :feature do
     end
   end
 
+  describe "visit SUBMISSIONS page" do
+    context "goes to submissions page and shows info and pictures" do
+      it "shows images" do
+        visit '/submissions'
+        page.has_css?('row .side-images', visible: :show)
+      end
+      it "has submission text" do
+        visit '/submissions'
+        page.has_css?('row .col-sm-9 .text-container h1', text: 'ARTIST SUBMISSION GUIDELINES')
+      end
+    end
+  end
+
 end
