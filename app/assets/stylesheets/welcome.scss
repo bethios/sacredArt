@@ -1,3 +1,62 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+.who-we-are{
+  width: auto;
+  margin: auto;
+}
+
+.who-we-are p{
+  font-size: 1.25em;
+  max-height: 50vh;
+  overflow: scroll;
+}
+
+.jumbotron{
+  background-image: image_url("shop.jpg") ;
+  background-size: cover;
+  height: 60vh;
+  background-position: center center;
+}
+
+.jumbotron h1{
+  text-align: center;
+  background-color: rgba($offwhite, 0.7);
+  padding: 12px;
+  width: 100%;
+  vertical-align: center;
+  margin-top: 18vh;
+}
+
+.side-images{
+  display: none;
+}
+
+.side-image{
+  width: 100%;
+  height: auto;
+}
+
+.panel-title a{
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.panel-body{
+  font-size: 1.3em;
+}
+
+@media screen and (min-width: 884px) {
+  .newspaper{
+    columns: 2;
+    column-gap: 30px;
+  }
+
+  .side-images{
+    display: block;
+  }
+
+
+}
+
+
+
