@@ -115,4 +115,15 @@ RSpec.feature "Welcome", :type => :feature do
     end
   end
 
+  describe "visit NEW page" do
+    context "goes to new page and shows latest instagram" do
+      it "shows image and comment" do
+        visit '/new'
+        page.has_css?('.instagram-image')
+        page.has_css?('.instagram-comment')
+      end
+    end
+
+  end
+
 end

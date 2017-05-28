@@ -59,6 +59,40 @@ iframe{
   width: 100%;
   height: 73vh;
 }
+
+.instagram-feed{
+  display: grid;
+  grid-template-columns:repeat(auto-fill, 350px);
+  grid-template-rows: auto;
+  margin: auto;
+  width: 100%;
+}
+
+.instagram-image{
+  min-width: 100%;
+  min-height: 100%;
+  vertical-align: center;
+  display: block;
+}
+
+.instagram-image-div{
+  height: 40vh;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.instagram-comment{
+  padding-top: 15px;
+  font-size: 1.5em;
+  overflow: scroll;
+  max-height: 15vh;
+}
+
+.instagram{
+  height: 60vh;
+}
+
 @media screen and (min-width: 884px) {
   .newspaper{
     columns: 2;

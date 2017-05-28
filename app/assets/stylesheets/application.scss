@@ -22,7 +22,7 @@
 body{
   font-family: 'Josefin Sans', sans-serif;
   background-color: $background;
-  margin: 0px;
+  margin: 0;
   color: $blackish;
   overflow: scroll;
 }
@@ -35,7 +35,7 @@ body{
   box-sizing: border-box;
   background: white;
   padding: 20px;
-  margin: 15px 0;
+  margin: 15px;
 }
 
 .text-container{
