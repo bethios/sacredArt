@@ -42,4 +42,11 @@ RSpec.describe WelcomeController, type: :controller do
       expect(response).to render_template("submissions")
     end
   end
+
+  describe "GET categories" do
+    it "renders the categories template" do
+      get :categories
+      expect(response).to render_template("categories")
+    end
+  end
 end

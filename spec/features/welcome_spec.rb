@@ -123,7 +123,19 @@ RSpec.feature "Welcome", :type => :feature do
         page.has_css?('.instagram-comment')
       end
     end
+  end
 
+  describe "visit CATEGORIES page" do
+    context "goes to categories page and shows tiled categories" do
+      it "shows images" do
+        visit '/categories'
+        page.has_css?('.categoryImage')
+      end
+      it "shows category label" do
+        visit '/categories'
+        page.has_css?('.categoryLabel', text:"JEWELRY")
+      end
+    end
   end
 
 end

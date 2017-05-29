@@ -197,6 +197,11 @@ div.footer{
   width: 100%;
 }
 
+
+.col-sm-4{
+  padding: 10px;
+}
+
 @media screen and (min-width: 768px) {
   .footer-col:not(:last-child){
     border-bottom: none;
@@ -226,5 +231,10 @@ div.footer{
   .row{
     margin: 20px;
   }
+
+  .col-sm-4{
+    padding: 15px;
+  }
 }
+
 

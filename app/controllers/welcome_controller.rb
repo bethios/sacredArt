@@ -22,4 +22,8 @@ class WelcomeController < ApplicationController
 
   def contact
   end
+
+  def categories
+
+  end
 end

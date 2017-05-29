@@ -84,7 +84,7 @@ iframe{
 
 .instagram-comment{
   padding-top: 15px;
-  font-size: 1.5em;
+  font-size: 1.25em;
   overflow: scroll;
   max-height: 15vh;
 }
@@ -92,6 +92,17 @@ iframe{
 .instagram{
   height: 60vh;
 }
+
+.categoryLabel{
+  text-align: center;
+  font-size: 1.2em;
+  padding-top: 20px;
+}
+
+.categoryImage{
+  width: 100%;
+}
+
 
 @media screen and (min-width: 884px) {
   .newspaper{
@@ -104,6 +115,13 @@ iframe{
   }
 
 
+
+}
+
+@media screen and (min-width: 1024px) {
+  .categoryLabel {
+    font-size: 1.75em;
+  }
 }
 
 

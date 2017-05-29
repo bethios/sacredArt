@@ -16,7 +16,7 @@
   <i class="ion-navicon-round dropdown-parent">
     <ul class="nav-links dropdown-body" id="dropdown-mobile">
       <li class="nav-li"><%= link_to "ABOUT", about_path %></li>
-      <li class="nav-li"><%= link_to "ARTISTS" %></li>
+      <li class="nav-li"><%= link_to "ARTISTS", categories_path %></li>
       <li class="nav-li"><%= link_to "SHOP" %></li>
       <li class="nav-li"><%= link_to "NEW", new_path %></li>
       <li class="nav-li"><%= link_to "FAQ", faq_path %></li>
@@ -26,19 +26,14 @@
   </i>
   <ul class="nav-links">
     <li class="nav-li"><%= link_to "ABOUT", about_path %></li>
-    <li class="dropdown-parent nav-li"><%= link_to "ARTISTS" %>
+    <li class="dropdown-parent nav-li"><%= link_to "ARTISTS", categories_path %>
       <div class="dropdown-body">
-        <%= link_to "BEAUTY" %>
-        <%= link_to "CERAMICS AND GLASS" %>
-        <%= link_to "FIBER AND WEARABLES" %>
-        <%= link_to "GRAPHIC ART" %>
-        <%= link_to "HOME" %>
-        <%= link_to "ILLUSTRATION" %>
+        <%= link_to "ORIGINAL ART" %>
+        <%= link_to "PRINTS" %>
+        <%= link_to "STATIONERY" %>
         <%= link_to "JEWELRY" %>
-        <%= link_to "PRINTMAKING" %>
-        <%= link_to "SEASONAL" %>
-        <%= link_to "STATIONARY AND PAPER" %>
-        <%= link_to "WOODWORKING" %>
+        <%= link_to "WEARABLES" %>
+        <%= link_to "HOME & SELF CARE" %>
       </div>
     </li>
     <li class="nav-li"><%= link_to "SHOP" %></li>
