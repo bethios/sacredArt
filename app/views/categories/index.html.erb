@@ -2,8 +2,8 @@
   <% @categories.each do |category| %>
   <div class="col-sm-4">
     <div class="content-container">
-      <%= image_tag('categories/' + category.image, :alt => 'category photo', :class => 'categoryImage') %>
-      <p class="categoryLabel"><%= category.name %></p>
+      <%= link_to image_tag('categories/' + category.image, :alt => 'category photo', :class => 'categoryImage'), category %>
+      <p class="categoryLabel"><%= link_to category.name, category  %></p>
     </div>
   </div>
   <% end %>

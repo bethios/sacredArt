@@ -31,6 +31,10 @@ body{
   box-sizing: border-box;
 }
 
+p{
+  font-size: 1.25em;
+}
+
 .content-container{
   box-sizing: border-box;
   background: white;
@@ -43,13 +47,10 @@ body{
   padding: 20px 30px;
 }
 
-.text-container p{
-  font-size: 1.3em;
-}
-
 strong{
   font-weight: 800;
   border-bottom: 1px $accent solid;
+  font-size: 1.3em;
 }
 
 nav{
@@ -171,7 +172,10 @@ iframe{
   font-size: 1.1em;
   background-color: $slate;
   color: white;
+}
 
+.footer p{
+  font-size: 1em;
 }
 
 .footer-col{

@@ -1,3 +1,6 @@
+require 'csv'
+
+
 Category.create!(
   name: "Original Art",
   image: "original.jpg"
@@ -23,4 +26,13 @@ Category.create!(
     image: "home.jpg"
 )
 
+
+
+csv_text = File.read('Artist_list_category.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  Artist.create!(row.to_hash)
+end
+
 puts "#{Category.count} categories created"
+puts "#{Artist.count} artists imported"

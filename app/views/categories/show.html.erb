@@ -1,0 +1,19 @@
+<h1 class="category-banner text-container"><%= @category.name %></h1>
+
+<% @category.artists.each do |artist| %>
+  <div class="content-container wrapper artist">
+      <% if artist.main_image %>
+         <%= image_tag('artist/' + artist.main_image, :class => 'artistMainImage') %>
+      <% end %>
+      <% if artist.image_2 %>
+        <%= image_tag('artist/' + artist.image_2, :class => 'artistSecondImage') %>
+      <% end %>
+      <% if artist.image_3 %>
+        <%= image_tag('artist/' + artist.image_3, :class => 'artistThirdImage') %>
+      <% end %>
+
+      <p class="bioBody"><%= artist.body %></p>
+      <p class="artistName"><strong><%= artist.name %></strong></p>
+  </div>
+<% end %>
+

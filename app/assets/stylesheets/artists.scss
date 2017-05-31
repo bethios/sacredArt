@@ -1,3 +1,73 @@
-// Place all the styles related to the Artists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.category-banner{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.artist{
+  padding: 15px;
+  margin: 15px;
+  display: block;
+}
+
+.artistMainImage {
+  grid-area: img1;
+  overflow: hidden;
+  max-height: 45vh;
+  max-width: 100%;
+}
+
+.artistSecondImage{
+  @extend .artistMainImage;
+  height: auto;
+  grid-area: img2;
+  display: none;
+  max-height: 20vh;
+}
+
+.artistThirdImage{
+  @extend .artistSecondImage;
+  grid-area: img3;
+}
+
+.bioBody{
+  grid-area: bio;
+  max-height: 35vh;
+  overflow: scroll;
+  padding: 10px;
+}
+
+.artistName{
+  grid-area: nm;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .artistSecondImage{
+    display: block;
+  }
+
+  .artistThirdImage{
+    display: block;
+  }
+
+  .bioBody{
+    padding-left: 30px;
+  }
+
+  .artistName{
+    padding-left: 30px;
+  }
+
+  .artist{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-gap: 15px;
+    grid-template-areas:
+            "img1 img1 img1 img1 img2 img2 bio bio bio bio bio"
+            "img1 img1 img1 img1 img2 img2 bio bio bio bio bio"
+            "img1 img1 img1 img1 img3 img3 bio bio bio bio bio"
+            "img1 img1 img1 img1 img3 img3 nm  nm  nm  nm  nm";
+
+  }
+}

@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 20170530211545) do
     t.string   "main_image"
     t.string   "image_2"
     t.string   "image_3"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "category"
-    t.integer  "topic_id"
+    t.integer  "category_id"
   end
 
-  add_index "artists", ["topic_id"], name: "index_artists_on_topic_id"
+  add_index "artists", ["category_id"], name: "index_artists_on_category_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
