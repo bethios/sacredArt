@@ -22,17 +22,13 @@
 body{
   font-family: 'Josefin Sans', sans-serif;
   background-color: $background;
-  margin: 0px;
+  margin: 0;
   color: $blackish;
   overflow: scroll;
 }
 
 *{
   box-sizing: border-box;
-}
-
-.text-container p{
-  font-size: 1.5em;
 }
 
 .content-container{
@@ -43,11 +39,17 @@ body{
 }
 
 .text-container{
+  @extend .content-container;
   padding: 20px 30px;
+}
+
+.text-container p{
+  font-size: 1.3em;
 }
 
 strong{
   font-weight: 800;
+  border-bottom: 1px $accent solid;
 }
 
 nav{
@@ -89,11 +91,11 @@ nav{
   padding: 10px;
 }
 
-.ion-navicon-round:hover {
+.ion-navicon-round:active {
   background-color: transparent;
 }
 
-.ion-navicon-round:hover .nav-li .nav {
+.ion-navicon-round:active .nav-li .nav {
   display: block;
 }
 
@@ -154,8 +156,13 @@ nav{
 }
 
 .mc-field-group input{
-  width: 250px;
+  min-width: 250px;
   border-radius: 5%;
+  color: $blackish
+}
+
+iframe{
+  border: none;
 }
 
 .button{
@@ -163,6 +170,8 @@ nav{
   margin: 8px;
   font-size: 1.1em;
   background-color: $slate;
+  color: white;
+
 }
 
 .footer-col{
@@ -170,8 +179,12 @@ nav{
   bottom: 0;
 }
 
-.footer-col:not(:last-child){
-  border-bottom: 1px $accent solid;
+.footer .social {
+  color: white;
+}
+
+.footer .social:hover{
+  color: $background;
 }
 
 div.footer{
@@ -182,6 +195,11 @@ div.footer{
   font-weight:bold;
   padding: 10px;
   width: 100%;
+}
+
+
+.col-sm-4{
+  padding: 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -213,5 +231,10 @@ div.footer{
   .row{
     margin: 20px;
   }
+
+  .col-sm-4{
+    padding: 15px;
+  }
 }
+
 

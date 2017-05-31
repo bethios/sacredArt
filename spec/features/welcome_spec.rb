@@ -71,4 +71,71 @@ RSpec.feature "Welcome", :type => :feature do
     end
   end
 
+  describe "visit CONTACT page" do
+    context "goes to Contact page and shows info" do
+      it "shows address" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 .contact', text: "VISIT")
+      end
+      it "shows map in iframe" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 iframe', visible: :show)
+      end
+      it "shows email address" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 div', text: "GENERAL INQUIRIES:")
+      end
+      it "shows social media icons" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 div', class: 'social ion-social-twitter')
+        page.has_css?('row .col-sm-6 div', class: 'social ion-social-facebook')
+        page.has_css?('row .col-sm-6 div', class: 'social ion-social-instagram')
+      end
+      it "shows store hours" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 div', text: "HOURS")
+      end
+      it "has newsletter template" do
+        visit '/contact'
+        page.has_css?('row .col-sm-6 div', text: "GET OUR NEWSLETTER" )
+      end
+    end
+  end
+
+  describe "visit SUBMISSIONS page" do
+    context "goes to submissions page and shows info and pictures" do
+      it "shows images" do
+        visit '/submissions'
+        page.has_css?('row .side-images', visible: :show)
+      end
+      it "has submission text" do
+        visit '/submissions'
+        page.has_css?('row .col-sm-9 .text-container h1', text: 'ARTIST SUBMISSION GUIDELINES')
+      end
+    end
+  end
+
+  describe "visit NEW page" do
+    context "goes to new page and shows latest instagram" do
+      it "shows image and comment" do
+        visit '/new'
+        page.has_css?('.instagram-image')
+        page.has_css?('.instagram-comment')
+      end
+    end
+  end
+
+  describe "visit CATEGORIES page" do
+    context "goes to categories page and shows tiled categories" do
+      it "shows images" do
+        visit '/categories'
+        page.has_css?('.categoryImage')
+      end
+      it "shows category label" do
+        visit '/categories'
+        page.has_css?('.categoryLabel', text:"JEWELRY")
+      end
+    end
+  end
+
 end

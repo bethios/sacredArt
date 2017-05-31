@@ -1,2 +1,38 @@
-<h1>Welcome#submissions</h1>
-<p>Find me in app/views/welcome/submissions.html.erb</p>
+<div class="row">
+  <div class="col-sm-3 side-images">
+    <%= image_tag('ceramics.jpg', alt: 'blue and white ceramic vase, small ceramic cups and tea pot', class: 'content-container side-image') %>
+    <%= image_tag('jewelry.jpg', alt: 'constellation necklaces on cards, clock hand earrings on cards', class: 'content-container side-image')%>
+  </div>
+  <div class="col-sm-9">
+    <div class="text-container">
+      <h1>ARTIST SUBMISSION GUIDELINES</h1>
+      <p>We curate our collection with a focus on artists who have found their unique voice and who are creating consistent,
+        quality work. Similar to traditional galleries, we work on a consignment basis, which gives us and the artists
+        flexibility to experiment with different pieces and to adjust our collection based on feedback. Our commission is
+        50% of retail sale price, and the artist sets the retail price.</p>
+        <p>We give preference to Chicagoland-based artists, and we work directly with artists, not with agents or representatives.
+        It is helpful if you visit the shop or peruse our website to get a sense of our aesthetic before you submit. We Require:</p>
+
+        <ul>
+          <li><p>Cover letter with bio, artist statement and/or CV</p></li>
+          <li><p>JPGs of your work (at least 3 but as many as 10)</p></li>
+          <li><p>Link to your online portfolio, website, or online shop</p></li>
+          <li><p>Dimensions of work</p></li>
+          <li><p>Price points for each piece</p></li>
+        </ul>
+
+        <p>Please submit to our dedicated submissions email: <%= mail_to("sacredartsubmissions@gmail.com")%>. Submissions with incomplete
+          information or submissions sent to the incorrect email address will not be considered.</p>
+
+        <p><em>We don’t review artwork on a walk-in basis. You must submit via email for consideration.</em></p>
+
+        <p>You will receive an auto-reply from us confirming that your submission has been received. When we have an
+        opening that is a good fit for you, we will contact you and set up an appointment. If you have not heard from
+        us within a year, please feel free to resubmit with new work. If it has been under a year, you do not need to
+        resubmit to us unless you have a big update to announce – we love to see new websites, online shop launches and
+          new design lines. And by all means please do add us to your e-newsletter contact list!</p>
+
+        <p><strong>Keep creating!</strong></p>
+    </div>
+  </div>
+</div>
