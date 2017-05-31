@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :artists
+
   get 'index'  => 'welcome#index'
 
   get 'about' => 'welcome#about'
@@ -10,8 +13,6 @@ Rails.application.routes.draw do
   get 'submissions' => 'welcome#submissions'
 
   get 'contact' => 'welcome#contact'
-
-  get 'categories' => 'welcome#categories'
 
   root 'welcome#index'
 

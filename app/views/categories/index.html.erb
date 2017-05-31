@@ -1,0 +1,10 @@
+<div class="row">
+  <% @categories.each do |category| %>
+  <div class="col-sm-4">
+    <div class="content-container">
+      <%= image_tag('categories/' + category.image, :alt => 'category photo', :class => 'categoryImage') %>
+      <p class="categoryLabel"><%= category.name %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
