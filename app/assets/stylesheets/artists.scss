@@ -1,8 +1,10 @@
+@import 'variables';
+
 .category-banner{
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
-  padding: 20px;
+  padding: $standard-padding;
 }
 
 .artist{
@@ -37,7 +39,7 @@
 
 .artistName{
   grid-area: nm;
-  font-size: 1.5em;
+  font-size: $focus;
   padding: 10px;
   text-transform: uppercase;
 }
@@ -83,6 +85,5 @@
             "img1 img1 img1 img1 img2 img2 bio bio bio bio bio"
             "img1 img1 img1 img1 img3 img3 bio bio bio bio bio"
             "img1 img1 img1 img1 img3 img3 bio bio bio bio bio";
-
   }
 }
