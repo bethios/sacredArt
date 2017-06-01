@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b562544-70b7-4fda-9ab1-26148a30903e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Cape Horn Illustration.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Cape horn Illustration.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Megan lee designs.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Megan lee designs.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Rachel O 1.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Rachel o 1.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Rachel O 2.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Rachel o 2.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Rachel O 3.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Rachel o 3.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Rachel O 4.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Rachel o 4.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Redbud Jewelry.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Redbud jewelry.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Steel Petal Champagne.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Steel petal Champagne.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Storm Print City 1.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Storm print city 1.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Storm Print City 2.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/Storm print city 2.JPG" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Rachel o 3.JPG" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Monica zanetti flag t.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/zanetti.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Rachel o 4.JPG" afterPath="$PROJECT_DIR$/app/assets/images/artist/Rachel.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/artist/Redbud jewelry.jpg" afterPath="$PROJECT_DIR$/app/assets/images/artist/redbud.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/Artist_list_category.numbers" afterPath="$PROJECT_DIR$/app/assets/images/Artist_list_category.numbers" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/artists.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/artists.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/categories/show.html.erb" afterPath="$PROJECT_DIR$/app/views/categories/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/welcome/submissions.html.erb" afterPath="$PROJECT_DIR$/app/views/welcome/submissions.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Artist_list_category.csv" afterPath="$PROJECT_DIR$/Artist_list_category.csv" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -89,8 +81,8 @@
       <file leaf-file-name="artists.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/artists.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="564">
+              <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -124,6 +116,7 @@
       <find>panel-group</find>
       <find>side</find>
       <find>p</find>
+      <find>OURADA</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -174,6 +167,7 @@
         <option value="$PROJECT_DIR$/app/views/welcome/submissions.html.erb" />
         <option value="$PROJECT_DIR$/app/views/categories/show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/artists.scss" />
+        <option value="$PROJECT_DIR$/Artist_list_category.csv" />
       </list>
     </option>
   </component>
@@ -184,9 +178,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
+    <option name="x" value="74" />
     <option name="y" value="23" />
-    <option name="width" value="1366" />
+    <option name="width" value="1346" />
     <option name="height" value="795" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -884,7 +878,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84093000" />
+    <option name="totallyTimeSpent" value="86479000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -896,10 +890,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="23" width="1366" height="795" extended-state="0" />
+    <frame x="74" y="23" width="1346" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19486405" sideWeight="0.49447513" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19785276" sideWeight="0.49447513" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784638" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784638" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -988,30 +982,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/images/carousel/carousel2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/carousel/carousel3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="66" lean-forward="false" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1301,7 +1271,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/artist/Monica zanetti flag t.jpg">
+    <entry file="file://$PROJECT_DIR$/app/assets/images/artist/zanetti.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1314,10 +1284,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/artist/redbud.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/artist/Rachel o 3.JPG">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/artist/Rachel.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Artist_list_category.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="84" column="41" lean-forward="false" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/artists.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="564">
+          <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
           <folding />
         </state>
       </provider>
