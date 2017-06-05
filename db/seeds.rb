@@ -26,7 +26,18 @@ Category.create!(
     image: "home.jpg"
 )
 
+admin = User.create!(
+    name:     'Admin User',
+    email:    'admin@example.com',
+    password: 'helloworld',
+    role:     'admin'
+)
 
+member = User.create!(
+    name:     'Member User',
+    email:    'member@example.com',
+    password: 'helloworld'
+)
 
 csv_text = File.read('Artist_list_category.csv')
 csv = CSV.parse(csv_text, :headers => true)

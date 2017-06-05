@@ -32,3 +32,5 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'json'
 gem 'httparty'
+gem 'bcrypt'
+gem "paperclip", "~> 5.0.0"
