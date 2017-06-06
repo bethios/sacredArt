@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605185131) do
+ActiveRecord::Schema.define(version: 20170605175406) do
 
-# Could not dump table "artists" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "artists", force: :cascade do |t|
+    t.string   "name"
+    t.text     "body"
+    t.string   "main_image"
+    t.string   "image_2"
+    t.string   "image_3"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "category"
+    t.integer  "category_id"
+  end
+
+  add_index "artists", ["category_id"], name: "index_artists_on_category_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
