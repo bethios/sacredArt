@@ -1,19 +1,8 @@
 <h1 class="category-banner"><%= @category.name %></h1>
 
-<% @category.artists.each do |artist| %>
-  <div class="content-container wrapper artist">
-      <% if artist.main_image%>
-         <%= image_tag('artist/' + artist.main_image, :class => 'artistMainImage') %>
-      <% end %>
-      <% if artist.image_2 %>
-        <%= image_tag('artist/' + artist.image_2, :class => 'artistSecondImage') %>
-      <% end %>
-      <% if artist.image_3 %>
-        <%= image_tag('artist/' + artist.image_3, :class => 'artistThirdImage') %>
-      <% end %>
-
-      <p class="artistName"><strong><%= artist.name %></strong></p>
-      <p class="bioBody"><%= artist.body %></p>
-  </div>
+<% if current_user && current_user.role == 'admin' %>
+  <%= link_to "Add New Artist", new_category_artist_path(@category), class: 'btn btn-success' %>
 <% end %>
+
+<%= render partial: 'artists/each' %>
 

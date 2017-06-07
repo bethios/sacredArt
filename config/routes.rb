@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :categories
-  resources :artists
+  resources :categories do
+    resources :artists
+  end
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 

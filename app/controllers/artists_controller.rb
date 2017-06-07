@@ -2,18 +2,31 @@ class ArtistsController < ApplicationController
   before_action :require_sign_in, except: :index
   before_action :authorize_user, except: :index
 
+
   def new
     @category = Category.find(params[:category_id])
     @artist = Artist.new
   end
 
   def create
+    @artist = Artist.new
+    @artist.name = params[:artist][:name]
+    @artist.body = params[:artist][:body]
+    @artist.main_image = params[:artist][:main_image]
+    @artist.image_2 = params[:artist][:image_2]
+    @artist.image_3 = params[:artist][:image_3]
+
+    uploaded_io = params[:artist][:main_image]
+    File.open(Rails.root.join('artist', uploaded_io.original_filename), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
+
     @category = Category.find(params[:category_id])
-    @artist = @category.artists.build(artist_params)
+    @artist.category_id = params[:category_id]
 
     if @artist.save
       flash[:notice] = "Artist was saved."
-      redirect_to [@artist.category, @artist]
+      redirect_to [@category]
     else
       flash.now[:alert] = "There was an error saving the artist. Please try again."
       render :edit
@@ -22,11 +35,15 @@ class ArtistsController < ApplicationController
 
   def update
     @artist = Artist.find(params[:id])
-    @artist.assign_attributes(artist_params)
+    @artist.name = params[:artist][:name]
+    @artist.body = params[:artist][:body]
+    @artist.main_image = params[:artist][:main_image]
+    @artist.image_2 = params[:artist][:image_2]
+    @artist.image_3 = params[:artist][:image_3]
 
     if @artist.save
       flash[:notice] = "Artist was updated."
-      redirect_to [@artist.category, @artist]
+      redirect_to [@artist.category]
     else
       flash.now[:alert] = "There was an error saving the artist. Please try again."
       render :edit
@@ -57,10 +74,6 @@ class ArtistsController < ApplicationController
   end
 
   private
-
-  def artist_params
-    params.require(:artist).permit(:name, :body, :main_image, :image_2, :image_3)
-  end
 
   def authorize_user
     unless current_user.admin?
