@@ -1,1 +1,6 @@
 TWITTER_ACCESS_TOKEN:
+
+Bucket:
+AWSAccessKeyId:
+AWSSecretKey:
+s3_region:
