@@ -1,4 +1,4 @@
-<%= form_for [category, artist] do |f| %>
+<%= form_for [category, artist], html: { multipart: true } do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name %>

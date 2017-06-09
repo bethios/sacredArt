@@ -39,11 +39,11 @@ member = User.create!(
     password: 'helloworld'
 )
 
-csv_text = File.read('Artist_list_category.csv')
-csv = CSV.parse(csv_text, :headers => true)
-csv.each do |row|
-  Artist.create!(row.to_hash)
-end
+#csv_text = File.read('Artist_list_category.csv')
+#csv = CSV.parse(csv_text, :headers => true)
+#csv.each do |row|
+#  Artist.create!(row.to_hash)
+#end
 
 puts "#{Category.count} categories created"
-puts "#{Artist.count} artists imported"
+#puts "#{Artist.count} artists imported"

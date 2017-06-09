@@ -16,11 +16,6 @@ class ArtistsController < ApplicationController
     @artist.image_2 = params[:artist][:image_2]
     @artist.image_3 = params[:artist][:image_3]
 
-    uploaded_io = params[:artist][:main_image]
-    File.open(Rails.root.join('artist', uploaded_io.original_filename), 'wb') do |file|
-      file.write(uploaded_io.read)
-    end
-
     @category = Category.find(params[:category_id])
     @artist.category_id = params[:category_id]
 

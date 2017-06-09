@@ -33,3 +33,6 @@ gem 'bootstrap-sass'
 gem 'json'
 gem 'httparty'
 gem 'bcrypt'
+gem "paperclip"
+gem 'aws-sdk', '~> 2.3'
+gem 'figaro', '1.0'

@@ -7,13 +7,13 @@
 
     <% end %>
       <% if artist.main_image%>
-          <%= image_tag('artist/' + artist.main_image, :class => 'artistMainImage') %>
+          <%= image_tag('public/system/artists/main_images/000/000/001/original/' + artist.main_image_file_name + "." + artist.main_image_content_type, :class => 'artistMainImage') %>
       <% end %>
       <% if artist.image_2 %>
-          <%= image_tag('artist/' + artist.image_2, :class => 'artistSecondImage') %>
+          <%= image_tag('public/system/artists/main_images/000/000/001/original/' + artist.image_2_file_name, :class => 'artistSecondImage') %>
       <% end %>
       <% if artist.image_3 %>
-          <%= image_tag('artist/' + artist.image_3, :class => 'artistThirdImage') %>
+          <%= image_tag('public/system/artists/main_images/000/000/001/original/' + artist.image_3_file_name, :class => 'artistThirdImage') %>
       <% end %>
 
       <p class="artistName"><strong><%= artist.name %></strong></p>
