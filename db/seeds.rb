@@ -27,9 +27,9 @@ Category.create!(
 )
 
 admin = User.create!(
-    name:     'Admin User',
-    email:    'admin@example.com',
-    password: 'helloworld',
+    name:     'Sacred Art Admin',
+    email:    Figaro.env.ADMIN_EMAIL,
+    password: Figaro.env.ADMIN_PASSWORD,
     role:     'admin'
 )
 

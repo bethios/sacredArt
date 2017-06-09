@@ -3,4 +3,4 @@ Aws.config.update({
                       credentials: Aws::Credentials.new(Figaro.env.AWSAccessKeyId, Figaro.env.AWSSecretKey),
                   })
 
-S3_BUCKET = Aws::S3::Resource.new.bucket(Figaro.env.S3_Bucket)
+S3_BUCKET = Figaro.env.S3_Bucket
