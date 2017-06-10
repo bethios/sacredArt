@@ -16,9 +16,6 @@ ActiveRecord::Schema.define(version: 20170608174804) do
   create_table "artists", force: :cascade do |t|
     t.string   "name"
     t.text     "body"
-    t.string   "main_image"
-    t.string   "image_2"
-    t.string   "image_3"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "category_id"

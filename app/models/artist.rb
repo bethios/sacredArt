@@ -26,12 +26,5 @@ class Artist < ActiveRecord::Base
 
   validates_attachment_content_type :image_3, :content_type => /\Aimage\/.*\z/
 
-  def s3_credentials
-    {:s3_Bucket => Figaro.env.S3_Bucket,
-     :access_key_id => Figaro.env.AWSAccessKeyId,
-     :secret_access_key => Figaro.env.AWSSecretKey,
-     :s3_region => Figaro.env.AWS_REGION
-    }
-  end
 
 end
