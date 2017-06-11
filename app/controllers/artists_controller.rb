@@ -65,13 +65,10 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
-  def show
-  end
-
   private
 
   def authorize_user
-    unless current_user.admin?
+    unless current_user.role == 'admin'
       flash[:alert] = "You must be an admin to do that."
       redirect_to topics_path
     end

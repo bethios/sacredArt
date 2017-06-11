@@ -1,6 +1,6 @@
 class Artist < ActiveRecord::Base
   belongs_to :category
-  default_scope { order('name') }
+  default_scope { order('name ASC') }
 
   has_attached_file :main_image,
                     styles: {
