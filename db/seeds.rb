@@ -28,15 +28,16 @@ Category.create!(
 
 admin = User.create!(
     name:     'Sacred Art Admin',
-    email:    Figaro.env.ADMIN_EMAIL,
-    password: Figaro.env.ADMIN_PASSWORD,
+    email:    'sacredartstore@gmail.com',
+    password: 'helloworld',
     role:     'admin'
 )
 
 member = User.create!(
     name:     'Member User',
     email:    'member@example.com',
-    password: 'helloworld'
+    password: 'helloworld',
+    role:     'admin'
 )
 
 #csv_text = File.read('Artist_list_category.csv')
@@ -45,5 +46,6 @@ member = User.create!(
 #  Artist.create!(row.to_hash)
 #end
 
+puts "#{User.count} users created"
 puts "#{Category.count} categories created"
 #puts "#{Artist.count} artists imported"

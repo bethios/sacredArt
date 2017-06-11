@@ -43,8 +43,8 @@
     <li class="nav-li"><%= link_to "CONTACT", contact_path %></li>
   </ul>
 </nav>
-<% if current_user && current_user.role == 'admin' %>
- <p>Signed in as <%= current_user.name %></p>
+<% if current_user %>
+    <%= current_user.name %> - <%= link_to "Sign Out", session_path(current_user), method: :delete %>
 <% end %>
 
 <% if flash[:notice] %>
