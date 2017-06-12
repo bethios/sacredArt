@@ -1,2 +1,33 @@
-<h1>FaQs#index</h1>
-<p>Find me in app/views/fa_qs/index.html.erb</p>
+<div class="row">
+  <div class="col-sm-3 side-images">
+    <%= image_tag('boats.jpg', alt: 'small wooden boxes with tiny boats and waves inside that are controlled by a crank', class: 'content-container side-image') %>
+    <%= image_tag('bottles.jpg', alt: 'tiny rows of bottle stoppers with glass vessels on top with natural items inside', class: 'content-container side-image')%>
+  </div>
+  <div class="col-sm-9" >
+    <div class="panel-group content-container">
+      <h1>FAQ</h1>
+      <%= link_to "Add FAQ", new_faq_path, :class => 'btn btn-success' %>
+
+
+      <% @faqs.each do |faq| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#faq" + #{faq.id}><%= faq.question %> <span class="caret"></span></a>
+            </h4>
+            <% if current_user && current_user.role == 'admin' %>
+                <%= link_to "Edit FAQ", edit_faq_path(faq.id), :class => 'btn btn-success' %>
+                <%= link_to "Delete FAQ", faq, method: :delete, :class => 'btn btn-success' %>
+            <% end %>
+          </div>
+          <div id="faq" + #{faq.id} class="panel-collapse collapse">
+            <div class="panel-body"><%= faq.answer %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

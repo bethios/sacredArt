@@ -2,7 +2,6 @@ class ArtistsController < ApplicationController
   before_action :require_sign_in, except: :index
   before_action :authorize_user, except: :index
 
-
   def new
     @category = Category.find(params[:category_id])
     @artist = Artist.new

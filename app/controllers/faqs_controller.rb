@@ -3,18 +3,47 @@ class FaqsController < ApplicationController
   before_action :authorize_user, except: :index
 
   def new
+    @faq = Faq.new
   end
 
   def create
+    @faq = Faq.new
+    @faq.question = params[:faq][:question]
+    @faq.answer = params[:faq][:answer]
+
+    if @faq.save
+      redirect_to admin_path
+    else
+      flash[:alert] = 'error saving faq'
+    end
   end
 
   def update
+    @faq = Faq.find(params[:id])
+    @faq.question = params[:faq][:question]
+    @faq.answer = params[:faq][:answer]
+
+    if @faq.save
+      redirect_to faqs_path
+    else
+      flash[:alert] = 'error saving faq'
+    end
   end
 
   def edit
+    @faq = Faq.find(params[:id])
   end
 
   def destroy
+    @faq = Faq.find(params[:id])
+
+    if @faq.destroy
+      flash[:notice] = "\"#{@faq.question}\" was deleted successfully."
+      redirect_to faqs_path
+    else
+      flash.now[:alert] = "There was an error deleting the faq."
+      render faqs_path
+    end
   end
 
   def index

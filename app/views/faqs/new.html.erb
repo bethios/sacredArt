@@ -1,2 +1,14 @@
-<h1>FaQs#new</h1>
-<p>Find me in app/views/fa_qs/new.html.erb</p>
+New FAQ
+<%= form_for @faq do |f| %>
+  <div class="form-group">
+    <%= f.label :question %>
+    <%= f.text_field :question %>
+  </div>
+  <div class="form-group">
+    <%= f.label :answer %>
+    <%= f.text_area :answer %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Save FAQ" %>
+  </div>
+<% end %>
