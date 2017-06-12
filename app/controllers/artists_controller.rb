@@ -70,7 +70,7 @@ class ArtistsController < ApplicationController
   def authorize_user
     unless current_user.role == 'admin'
       flash[:alert] = "You must be an admin to do that."
-      redirect_to topics_path
+      redirect_to index_path
     end
   end
 end
