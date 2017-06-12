@@ -1,4 +1,8 @@
-<%= link_to "Update Hours", edit_hour_path(Hour.last), :class => 'btn btn-success' %>
-<%= link_to "Add Event", new_event_path, :class => 'btn btn-success' %>
-<%= link_to "Add FAQ", new_faq_path, :class => 'btn btn-success' %>
+<div class="admin-panel">
+  <%= link_to "Update Hours", edit_hour_path(Hour.last), :class => 'btn btn-success' %>
+  <%= link_to "Add Event", new_event_path, :class => 'btn btn-success' %>
+  <%= link_to "View All Events", events_path, :class => 'btn btn-success' %>
+  <%= link_to "Add FAQ", new_faq_path, :class => 'btn btn-success' %>
+</div>
+
 

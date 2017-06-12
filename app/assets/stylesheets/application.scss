@@ -206,6 +206,21 @@ div.footer{
   padding: 10px;
 }
 
+.btn-success{
+  background-color: $slate;
+}
+
+.admin-panel{
+  padding: 50px;
+  text-align: center;
+}
+
+.admin-panel a{
+  margin: 15px 30px;
+  font-size: 2rem;
+
+}
+
 @media screen and (min-width: 768px) {
   .footer-col:not(:last-child){
     border-bottom: none;

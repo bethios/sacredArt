@@ -23,7 +23,7 @@ class ArtistsController < ApplicationController
       redirect_to [@category]
     else
       flash.now[:alert] = "There was an error saving the artist. Please try again."
-      render :edit
+      render :new
     end
   end
 

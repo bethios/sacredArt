@@ -1,3 +1,5 @@
-<p><strong><%= markdown(Hour.last.title.upcase) %></strong>
-  <%=  markdown(Hour.last.body) %>
-</p>
+<% if Hour.last %>
+  <p><strong><%= markdown(Hour.last.title.upcase) %></strong>
+    <%=  markdown(Hour.last.body) %>
+  </p>
+<% end %>
