@@ -1,0 +1,57 @@
+<div class="row">
+<div class="col-sm-6">
+  <table class="content-container">
+    <tr>
+      <th>Style</th>
+      <th>Markdown Syntax</th>
+    </tr>
+    <tr>
+      <td>Autolink</td>
+      <td>< ></td>
+    </tr>
+    <tr>
+      <td>Bold</td>
+      <td>**word**</td>
+    </tr>
+    <tr>
+      <td>Heading</td>
+      <td>###heading</td>
+    </tr>
+    <tr>
+      <td>Small Heading</td>
+      <td>####heading</td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td>![](url)</td>
+    </tr>
+    <tr>
+      <td>Italics</td>
+      <td>_word_</td>
+    </tr>
+    <tr>
+      <td>Bullet List</td>
+      <td>* or -</td>
+    </tr>
+
+  </table>
+</div>
+
+<div class="col-sm-6">
+  <div class="content-container ">
+    <%= form_for @faq do |f| %>
+        <div class="form-group">
+          <%= f.label :question %>
+          <%= f.text_field :question, class: "form-control"  %>
+        </div>
+        <div class="form-group">
+          <%= f.label :answer %>
+          <%= f.text_area :answer, rows: 15, class: "form-control"  %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Save FAQ"  %>
+        </div>
+    <% end %>
+  </div>
+</div>
+</div>

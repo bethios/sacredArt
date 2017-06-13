@@ -1,8 +1,23 @@
-<div class="admin-panel">
-  <%= link_to "Update Hours", edit_hour_path(Hour.last), :class => 'btn btn-success' %>
-  <%= link_to "Add Event", new_event_path, :class => 'btn btn-success' %>
-  <%= link_to "View All Events", events_path, :class => 'btn btn-success' %>
-  <%= link_to "Add FAQ", new_faq_path, :class => 'btn btn-success' %>
+<div class="content-container">
+  <h2 class="category-banner">Admin Panel</h2>
+  <div class="admin-panel">
+    <%= link_to "Update Hours", edit_hour_path(Hour.last), :class => 'btn btn-success' %>
+    <%= link_to "Add Event", new_event_path, :class => 'btn btn-success' %>
+    <%= link_to "View All Events", events_path, :class => 'btn btn-success' %>
+    <%= link_to "Add FAQ", new_faq_path, :class => 'btn btn-success' %>
+  </div>
+  <p><strong>Add Artist</strong><br>
+  To add an artist go to the applicable <%= link_to "category", categories_path %> and use the Add Artist button there</p>
+  <p><strong>To Edit/Delete an artist</strong><br>
+  Look for the Edit and Delete button on each artist profile.</p>
+  <p><strong>Regarding Events</strong><br>
+  Events will automatically be taken of the <%= link_to "new page", new_path %> once their date has passed. To Edit
+  or review old events see the <%= link_to "event index", events_path %>. This can be helpful for recurring events, simply
+  change the date to a future date and it will now show up on the new page.</p>
+  <p><strong>Regarding FAQ</strong><br>
+  New FAQ can be added from this page but to update old FAQ go to the <%= link_to "FAQ Page", faqs_path %> and find the
+  edit and delete buttons for each FAQ in the collapsible panel.</p>
 </div>
+
 
 

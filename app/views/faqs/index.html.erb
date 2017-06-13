@@ -20,7 +20,7 @@
             </h4>
           </div>
           <div id="faq<%= faq.id %>"  class="panel-collapse collapse">
-            <div class="panel-body"><%= faq.answer %>
+            <div class="panel-body"><%= markdown(faq.answer) %>
               <% if current_user && current_user.role == 'admin' %>
                   <div class="update-buttons">
                     <%= link_to "Edit FAQ", edit_faq_path(faq.id), :class => 'btn btn-success' %>

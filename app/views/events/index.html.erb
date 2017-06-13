@@ -1,4 +1,6 @@
 <h2>All Events, past and present</h2>
+<%= link_to "Add Event", new_event_path, :class => 'btn btn-success' %>
+
 <% @events.each do |event| %>
   <div class="content-container">
     <h2><%= event.title %></h2>
