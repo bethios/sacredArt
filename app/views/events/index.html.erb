@@ -1,5 +1,5 @@
 <h2>All Events, past and present</h2>
-<%= @events.each do |event| %>
+<% @events.each do |event| %>
   <div class="content-container">
     <h2><%= event.title %></h2>
     <h3><%= event.date.to_formatted_s(:long) %></h3>

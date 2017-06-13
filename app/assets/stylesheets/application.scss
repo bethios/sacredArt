@@ -210,6 +210,11 @@ div.footer{
   background-color: $slate;
 }
 
+.btn-success:hover{
+  background-color: $background;
+  color: black;
+}
+
 .admin-panel{
   padding: 50px;
   text-align: center;
@@ -218,7 +223,10 @@ div.footer{
 .admin-panel a{
   margin: 15px 30px;
   font-size: 2rem;
+}
 
+.panel-title{
+  display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
