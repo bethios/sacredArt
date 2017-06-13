@@ -206,6 +206,10 @@ div.footer{
   padding: 10px;
 }
 
+.signed-in{
+  padding: 10px;
+}
+
 .btn-success{
   background-color: $slate;
 }
@@ -213,6 +217,11 @@ div.footer{
 .btn-success:hover{
   background-color: $background;
   color: black;
+}
+
+.admin-buttons{
+  text-align: center;
+  padding: 5px;
 }
 
 .admin-panel{

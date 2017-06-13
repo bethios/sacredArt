@@ -44,7 +44,9 @@
   </ul>
 </nav>
 <% if current_user %>
-    Signed in as: <%= current_user.name %> --- <%= link_to "Admin Page", admin_path %> --- <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+    <div class="signed-in">
+      Signed in as: <%= current_user.name %> --- <%= link_to "Admin Page", admin_path %> --- <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+    </div>
 <% end %>
 
 <% if flash[:notice] %>
