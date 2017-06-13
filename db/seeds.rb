@@ -40,12 +40,20 @@ member = User.create!(
     role:     'admin'
 )
 
-#csv_text = File.read('Artist_list_category.csv')
-#csv = CSV.parse(csv_text, :headers => true)
-#csv.each do |row|
-#  Artist.create!(row.to_hash)
-#end
+Hour.create!(
+    title:  'Spring Hours',
+    body:   'Monday: By Chance or Appointment
+Tuesday - Friday: noon - 7pm
+Saturday - Sunday: 11am - 6pm'
+)
+
+csv_text = File.read('faq.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  Faq.create!(row.to_hash)
+end
 
 puts "#{User.count} users created"
 puts "#{Category.count} categories created"
-#puts "#{Artist.count} artists imported"
+puts "#{Faq.count} faqs created"
+puts "#{Hour.count} hours created"
