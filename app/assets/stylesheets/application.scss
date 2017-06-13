@@ -31,25 +31,26 @@ body{
   box-sizing: border-box;
 }
 
+p{
+  font-size: $paragraph;
+}
+
 .content-container{
   box-sizing: border-box;
   background: white;
-  padding: 20px;
-  margin: 15px;
+  padding: $standard-padding;
+  margin: $standard-margin;
 }
 
 .text-container{
   @extend .content-container;
-  padding: 20px 30px;
-}
-
-.text-container p{
-  font-size: 1.3em;
+  padding: $standard-padding 30px;
 }
 
 strong{
   font-weight: 800;
   border-bottom: 1px $accent solid;
+  font-size: $paragraph;
 }
 
 nav{
@@ -87,7 +88,7 @@ nav{
   float:right;
   margin-top: 20px;
   margin-right: 5vw;
-  font-size: 2.5em;
+  font-size: $icon-sizing;
   padding: 10px;
 }
 
@@ -101,7 +102,7 @@ nav{
 
 .dropdown-parent {
   overflow: hidden;
-  padding-bottom: 20px;
+  padding-bottom: $standard-padding;
   background-color: transparent;
 }
 
@@ -115,7 +116,7 @@ nav{
 .dropdown-body {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: $offwhite;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba($offwhite, 0.2);
   z-index: 50;
@@ -170,8 +171,11 @@ iframe{
   margin: 8px;
   font-size: 1.1em;
   background-color: $slate;
-  color: white;
+  color: $white;
+}
 
+.footer p{
+  font-size: 1em;
 }
 
 .footer-col{
@@ -180,7 +184,7 @@ iframe{
 }
 
 .footer .social {
-  color: white;
+  color: $white;
 }
 
 .footer .social:hover{
@@ -189,9 +193,9 @@ iframe{
 
 div.footer{
   background-color: $blackish;
-  color:white;
+  color: $white;
   text-align: center;
-  font-size: 1.2em;
+  font-size: $paragraph;
   font-weight:bold;
   padding: 10px;
   width: 100%;
@@ -225,7 +229,7 @@ div.footer{
 
   .nav-li {
     display: block;
-    font-size: 1.3em;
+    font-size: $paragraph;
   }
 
   .row{

@@ -1,0 +1,22 @@
+<% @category.artists.each do |artist| %>
+    <div class="content-container wrapper artist">
+      <% if current_user && current_user.role == 'admin' %>
+          <%= link_to "Edit Artist", edit_category_artist_path(artist.category, artist), class: 'btn btn-default' %>
+          <%= link_to "Delete Artist", [artist.category, artist], method: :delete, class: 'btn btn-danger',
+                      data: { confirm: 'Are you sure you want to delete this recipe?' } %>
+      <% end %>
+
+      <% if artist.main_image%>
+          <%= image_tag(artist.main_image.url(:large), :class => 'artistMainImage') %>
+      <% end %>
+      <% if artist.image_2 %>
+          <%= image_tag(artist.image_2.url(:small), :class => 'artistSecondImage') %>
+      <% end %>
+      <% if artist.image_3 %>
+          <%= image_tag(artist.image_3.url(:small), :class => 'artistThirdImage') %>
+      <% end %>
+
+      <p class="artistName"><strong><%= artist.name %></strong></p>
+      <p class="bioBody"><%= artist.body %></p>
+    </div>
+<% end %>
