@@ -45,10 +45,10 @@ class EventsController < ApplicationController
 
     if @event.destroy
       flash[:notice] = "\"#{@event.title}\" was deleted successfully."
-      redirect_to index_path
+      redirect_to events_path
     else
       flash.now[:alert] = "There was an error deleting the event."
-      render index_path
+      render events_path
     end
   end
 
