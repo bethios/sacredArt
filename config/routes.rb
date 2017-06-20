@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'new' => 'welcome#new'
 
+  get 'shop' => 'welcome#shop'
+
   get 'submissions' => 'welcome#submissions'
 
   get 'contact' => 'welcome#contact'
