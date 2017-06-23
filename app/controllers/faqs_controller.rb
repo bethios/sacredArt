@@ -12,7 +12,7 @@ class FaqsController < ApplicationController
     @faq.answer = params[:faq][:answer]
 
     if @faq.save
-      redirect_to admin_path
+      redirect_to faqs_path
     else
       flash[:alert] = 'error saving faq'
     end

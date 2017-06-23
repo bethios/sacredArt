@@ -102,13 +102,13 @@
   height: 60vh;
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 641px){
   .instagram-feed{
     grid-template-columns: 50% 50%;
   }
 }
 
-@media screen and (min-width: 884px) {
+@media screen and (min-width: 961px) {
   .newspaper{
     columns: 2;
     column-gap: 30px;
@@ -123,8 +123,14 @@
   }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1025px){
   .instagram-feed{
     grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+
+@media screen and (min-width: 1281px){
+  .instagram-feed{
+    grid-template-columns: 20% 20% 20% 20% 20%;
   }
 }

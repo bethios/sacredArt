@@ -172,7 +172,8 @@ nav{
 .mc-field-group input{
   min-width: 250px;
   border-radius: 5%;
-  color: $blackish
+  color: $blackish;
+  padding: 2px 5px;
 }
 
 iframe{
@@ -187,13 +188,16 @@ iframe{
   color: $white;
 }
 
+.footer{
+  bottom: 0;
+}
+
 .footer p{
   font-size: $small;
 }
 
 .footer-col{
   margin: 25px 0 10px 0;
-  bottom: 0;
 }
 
 .footer .social {
@@ -221,6 +225,10 @@ div.footer{
 
 .signed-in{
   padding: 10px;
+}
+
+.btn{
+  font-size: 1.2em;
 }
 
 .btn-success{
