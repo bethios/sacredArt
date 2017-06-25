@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id].to_i)
     @event.title = params[:event][:title]
     @event.date = params[:event][:date]
     @event.body = params[:event][:body]
@@ -37,11 +37,11 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id].to_i)
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id].to_i)
 
     if @event.destroy
       flash[:notice] = "\"#{@event.title}\" was deleted successfully."

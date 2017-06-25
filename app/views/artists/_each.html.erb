@@ -16,7 +16,7 @@
           <%= image_tag(artist.image_3.url(:small), :class => 'artistThirdImage') %>
       <% end %>
 
-      <p class="artistName"><strong><%= artist.name %></strong></p>
-      <p class="bioBody"><%= artist.body %></p>
+      <p class="artistName"><strong><%= sanitize artist.name %></strong></p>
+      <p class="bioBody"><%= sanitize artist.body %></p>
     </div>
 <% end %>

@@ -19,7 +19,7 @@ class FaqsController < ApplicationController
   end
 
   def update
-    @faq = Faq.find(params[:id])
+    @faq = Faq.find(params[:id].to_i)
     @faq.question = params[:faq][:question]
     @faq.answer = params[:faq][:answer]
 
@@ -31,11 +31,11 @@ class FaqsController < ApplicationController
   end
 
   def edit
-    @faq = Faq.find(params[:id])
+    @faq = Faq.find(params[:id].to_i)
   end
 
   def destroy
-    @faq = Faq.find(params[:id])
+    @faq = Faq.find(params[:id].t0_i)
 
     if @faq.destroy
       flash[:notice] = "\"#{@faq.question}\" was deleted successfully."

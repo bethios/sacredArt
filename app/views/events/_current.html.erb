@@ -2,9 +2,9 @@
   <% Event.all.each do |event| %>
       <% if event.date >= Time.new + 24*60*60 %>
           <div class="content-container">
-            <h2>Upcoming Event: <%= event.title %></h2>
-            <h3><%= event.date.to_formatted_s(:long) %></h3>
-            <p><%= markdown(event.body) %></p>
+            <h2>Upcoming Event: <%= sanitize event.title %></h2>
+            <h3><%= sanitize event.date.to_formatted_s(:long) %></h3>
+            <p><%= sanitize markdown(event.body) %></p>
 
             <% if current_user && current_user.role == 'admin' %>
               <%= link_to "Edit Event", edit_event_path(event.id), class: 'btn btn-success'  %>

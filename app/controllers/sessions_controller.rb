@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
+    user = User.find_by(email: params[:session][:email].downcase.to_s)
 
-    if user && user.authenticate(params[:session][:password])
+    if user && user.authenticate(params[:session][:password].to_s)
       create_session(user)
       flash[:notice] = "Welcome, #{user.name}!"
       redirect_to admin_path

@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
-  before_action :require_sign_in, except: :index
-  before_action :authorize_user, except: :index
+  before_action :require_sign_in
+  before_action :authorize_user
 
   def new
     @category = Category.find(params[:category_id])
@@ -28,7 +28,7 @@ class ArtistsController < ApplicationController
   end
 
   def update
-    @artist = Artist.find(params[:id])
+    @artist = Artist.find(params[:id].to_i)
     @artist.name = params[:artist][:name]
     @artist.body = params[:artist][:body]
     @artist.main_image = params[:artist][:main_image]
@@ -45,11 +45,11 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    @artist = Artist.find(params[:id])
+    @artist = Artist.find(params[:id].to_i)
   end
 
   def destroy
-    @artist = Artist.find(params[:id])
+    @artist = Artist.find(params[:id].to_i)
 
     if @artist.destroy
       flash[:notice] = "\"#{@artist.name}\" was deleted successfully."
