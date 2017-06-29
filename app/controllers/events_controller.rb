@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :require_sign_in, except: :index
   before_action :authorize_user, except: :index
+  before_action :find_event, except: [:new, :create]
 
   def new
     @event = Event.new
@@ -8,11 +9,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new
-    @event.title = params[:event][:title]
-    @event.date = params[:event][:date]
-    @event.body = params[:event][:body]
-
-    if @event.save
+    if @event.update_attributes(event_params)
       flash[:notice] = "Event was saved."
       redirect_to events_path
     else
@@ -22,12 +19,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id].to_i)
-    @event.title = params[:event][:title]
-    @event.date = params[:event][:date]
-    @event.body = params[:event][:body]
-
-    if @event.save
+    if @event.update_attributes(event_params)
       flash[:notice] = "Event was updated."
       redirect_to events_path
     else
@@ -37,12 +29,9 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id].to_i)
   end
 
   def destroy
-    @event = Event.find(params[:id].to_i)
-
     if @event.destroy
       flash[:notice] = "\"#{@event.title}\" was deleted successfully."
       redirect_to events_path
@@ -61,5 +50,13 @@ class EventsController < ApplicationController
       flash[:alert] = "You must be an admin to do that."
       redirect_to index_path
     end
+  end
+
+  def find_event
+    @event = Event.find(params[:id].to_i)
+  end
+
+  def event_params
+    params.require(:event).permit(:title, :date, :body)
   end
 end

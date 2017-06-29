@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe FaqsController, type: :controller do
-  let(:my_faq) { Faq.create!( question: "What is the answer to life the universe and everything?", answer: "42") }
+  let(:my_faq) { Faq.create!( question: "What is the answer to life the universe and everything?", answer: "The answer is 42") }
   let(:admin) { User.create!(name: 'admin user', email: 'admin@admin.com', password: "helloworld", role: :admin) }
 
   context "guest" do
@@ -26,7 +26,7 @@ RSpec.describe FaqsController, type: :controller do
 
     describe "FAQS create" do
       it "returns http redirect" do
-        post :create, faq: { question: "What is the answer to life the universe and everything?", answer: "42" }
+        post :create, faq: { question: "What is the answer to life the universe and everything?", answer: "The answer is 42" }
         expect(response).to redirect_to(new_session_path)
       end
     end
@@ -92,17 +92,17 @@ RSpec.describe FaqsController, type: :controller do
 
     describe "FAQ create" do
       it "returns http success" do
-        expect { post :create, faq: { question: "What is the answer to life the universe and everything?", answer: "42" }}.to change(Faq,:count).by(1)
+        expect { post :create, faq: { question: "What is the answer to life the universe and everything?", answer: "The answer is 42" }}.to change(Faq,:count).by(1)
       end
 
       it "assigns the new faq to @faq" do
-        post :create, faq: { question: "What is the answer to life the universe and everything?", answer: "42" }
+        post :create, faq: { question: "What is the answer to life the universe and everything?", answer: "The answer is 42" }
         expect(assigns(:faq)).to eq Faq.last
       end
 
-      it "redirects to the admin path" do
-        post :create, faq: { question: "What is the answer to life the universe and everything?", answer: "42"}
-        expect(response).to redirect_to admin_path
+      it "redirects to the faq path" do
+        post :create, faq: { question: "What is the answer to life the universe and everything?", answer: "The answer is 42"}
+        expect(response).to redirect_to faqs_path
       end
     end
 

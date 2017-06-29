@@ -37,7 +37,7 @@ p{
 
 .content-container{
   box-sizing: border-box;
-  background: white;
+  background: $white;
   padding: $standard-padding;
   margin: $standard-margin;
 }
@@ -180,7 +180,7 @@ iframe{
   border: none;
 }
 
-.button{
+.btn-mailer{
   width: 250px;
   margin: 8px;
   font-size: 1.1em;
@@ -251,7 +251,7 @@ div.footer{
 }
 
 .admin-panel a{
-  margin: 15px 30px;
+  margin: $standard-margin 30px;
   font-size: 2rem;
 }
 
@@ -290,7 +290,7 @@ div.footer{
   }
 
   .col-sm-4{
-    padding: 15px;
+    padding: $small-padding;
   }
 }
 
