@@ -1,7 +1,6 @@
 class ArtistsController < ApplicationController
-  before_action :require_sign_in, except: :index
-  before_action :authorize_user, except: :index
-
+  before_action :require_sign_in
+  before_action :authorize_user
 
   def new
     @category = Category.find(params[:category_id])
@@ -24,12 +23,12 @@ class ArtistsController < ApplicationController
       redirect_to [@category]
     else
       flash.now[:alert] = "There was an error saving the artist. Please try again."
-      render :edit
+      render :new
     end
   end
 
   def update
-    @artist = Artist.find(params[:id])
+    @artist = Artist.find(params[:id].to_i)
     @artist.name = params[:artist][:name]
     @artist.body = params[:artist][:body]
     @artist.main_image = params[:artist][:main_image]
@@ -46,11 +45,11 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    @artist = Artist.find(params[:id])
+    @artist = Artist.find(params[:id].to_i)
   end
 
   def destroy
-    @artist = Artist.find(params[:id])
+    @artist = Artist.find(params[:id].to_i)
 
     if @artist.destroy
       flash[:notice] = "\"#{@artist.name}\" was deleted successfully."
@@ -70,7 +69,7 @@ class ArtistsController < ApplicationController
   def authorize_user
     unless current_user.role == 'admin'
       flash[:alert] = "You must be an admin to do that."
-      redirect_to topics_path
+      redirect_to index_path
     end
   end
 end

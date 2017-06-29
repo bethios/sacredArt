@@ -1,0 +1,16 @@
+<h2 class="category-banner">All Events, past and present</h2>
+<% if current_user && current_user.role == 'admin' %>
+    <div class="admin-buttons">
+      <%= link_to "Add Event", new_event_path, :class => 'btn btn-success' %>
+    </div>
+<% end %>
+
+<% @events.each do |event| %>
+  <div class="content-container">
+    <h2><%= sanitize event.title %></h2>
+    <h3><%=  sanitize event.date.to_formatted_s(:long) %></h3>
+    <p><%= sanitize markdown(event.body) %></p>
+    <%= link_to "Edit Event", edit_event_path(event.id), class: 'btn btn-success'  %>
+    <%= link_to "Delete Event", event, method: :delete, :class => 'btn btn-success' %>
+  </div>
+<% end %>

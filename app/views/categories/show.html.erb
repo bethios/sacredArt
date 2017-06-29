@@ -1,7 +1,9 @@
 <h1 class="category-banner"><%= @category.name %></h1>
 
 <% if current_user && current_user.role == 'admin' %>
-  <%= link_to "Add New Artist", new_category_artist_path(@category), class: 'btn btn-success' %>
+    <div class="admin-buttons">
+      <%= link_to "Add New Artist", new_category_artist_path(@category), class: 'btn btn-success' %>
+    </div>
 <% end %>
 
 <%= render partial: 'artists/each' %>

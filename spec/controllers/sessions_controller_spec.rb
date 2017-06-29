@@ -36,9 +36,9 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to render_template :new
     end
 
-    it "redirects to the root view" do
+    it "redirects to the admin path" do
       post :create, session: {email: my_user.email, password: my_user.password}
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(admin_path)
     end
   end
 

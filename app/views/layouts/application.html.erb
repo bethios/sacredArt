@@ -13,17 +13,20 @@
 <body>
 <nav>
   <%= link_to image_tag("sa_logo_small.png", :alt => "Sacred Art Logo", :class => "logo"), index_path %>
-  <i class="ion-navicon-round dropdown-parent">
-    <ul class="nav-links dropdown-body" id="dropdown-mobile">
-      <li class="nav-li"><%= link_to "ABOUT", about_path %></li>
-      <li class="nav-li"><%= link_to "ARTISTS", categories_path %></li>
-      <li class="nav-li"><%= link_to "SHOP" %></li>
-      <li class="nav-li"><%= link_to "NEW", new_path %></li>
-      <li class="nav-li"><%= link_to "FAQ", faq_path %></li>
-      <li class="nav-li"><%= link_to "SUBMISSIONS", submissions_path %></li>
-      <li class="nav-li"><%= link_to "CONTACT", contact_path %></li>
+
+  <i class="ion-navicon-round" data-toggle="collapse" data-target="#mobile"></i>
+  <div id="mobile" class="collapse">
+    <ul class="mobile-menu">
+      <li ><%= link_to "ABOUT", about_path %></li>
+      <li ><%= link_to "ARTISTS", categories_path %></li>
+      <!-- <li ><%= link_to "SHOP" %></li> -->
+      <li ><%= link_to "NEW", new_path %></li>
+      <li ><%= link_to "FAQ", faqs_path %></li>
+      <li ><%= link_to "SUBMISSIONS", submissions_path %></li>
+      <li ><%= link_to "CONTACT", contact_path %></li>
     </ul>
-  </i>
+  </div>
+
   <ul class="nav-links">
     <li class="nav-li"><%= link_to "ABOUT", about_path %></li>
     <li class="dropdown-parent nav-li"><%= link_to "ARTISTS", categories_path %>
@@ -36,15 +39,19 @@
         <%= link_to "HOME & SELF CARE", '/categories/6'  %>
       </div>
     </li>
-    <li class="nav-li"><%= link_to "SHOP" %></li>
+    <!-- <li class="nav-li"><%= link_to "SHOP" %></li> -->
     <li class="nav-li"><%= link_to "NEW", new_path %></li>
-    <li class="nav-li"><%= link_to "FAQ", faq_path %></li>
+    <li class="nav-li"><%= link_to "FAQ", faqs_path %></li>
     <li class="nav-li"><%= link_to "SUBMISSIONS", submissions_path %></li>
     <li class="nav-li"><%= link_to "CONTACT", contact_path %></li>
   </ul>
 </nav>
+
 <% if current_user %>
-    <%= current_user.name %> - <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+    <div class="signed-in">
+      Signed in as: <%= current_user.name %> --- <%= link_to "Admin Page", admin_path, :class => 'btn btn-success' %>
+      --- <%= link_to "Sign Out", session_path(current_user), method: :delete, :class => 'btn btn-danger' %>
+    </div>
 <% end %>
 
 <% if flash[:notice] %>
