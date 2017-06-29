@@ -22,6 +22,16 @@ class ArtistsController < ApplicationController
   end
 
   def update
+    if params[:artist][:delete_main] == '1'
+      @artist.main_image = nil
+    end
+    if params[:artist][:delete_image_2] == '1'
+      @artist.image_2 = nil
+    end
+    if params[:artist][:delete_image_3] == '1'
+      @artist.image_3 = nil
+    end
+
     if @artist.update_attributes(artist_params)
       flash[:notice] = "Artist was updated."
       redirect_to category_path(params[:category_id])
@@ -29,6 +39,7 @@ class ArtistsController < ApplicationController
       flash.now[:alert] = "There was an error saving the artist. Please try again."
       render :edit
     end
+
   end
 
   def edit
@@ -68,4 +79,5 @@ class ArtistsController < ApplicationController
   def find_category
     @category = Category.find(params[:category_id])
   end
+
 end
