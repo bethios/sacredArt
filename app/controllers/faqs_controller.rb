@@ -11,9 +11,11 @@ class FaqsController < ApplicationController
     @faq = Faq.new
 
     if @faq.update_attributes(faq_params)
+      flash[:alert] = 'FAQ Saved'
       redirect_to faqs_path
     else
-      flash[:alert] = 'Error saving FAQ'
+      flash[:alert] = @faq.errors.full_messages.to_sentence
+      render :new
     end
   end
 
@@ -21,7 +23,8 @@ class FaqsController < ApplicationController
     if @faq.update_attributes(faq_params)
       redirect_to faqs_path
     else
-      flash[:alert] = 'Error saving FAQ'
+      flash[:alert] = @faq.errors.full_messages.to_sentence
+      render :edit
     end
   end
 
@@ -33,7 +36,7 @@ class FaqsController < ApplicationController
       flash[:notice] = "\"#{@faq.question}\" was deleted successfully."
       redirect_to faqs_path
     else
-      flash.now[:alert] = "There was an error deleting the faq."
+      flash.now[:alert] = @faq.errors.full_messages.to_sentence
       render faqs_path
     end
   end

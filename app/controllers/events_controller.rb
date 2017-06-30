@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :require_sign_in, except: :index
   before_action :authorize_user, except: :index
-  before_action :find_event, except: [:new, :create]
+  before_action :find_event, only: [:update, :edit, :destroy]
 
   def new
     @event = Event.new
@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       flash[:notice] = "Event was saved."
       redirect_to events_path
     else
-      flash.now[:alert] = "There was an error saving the event. Please try again."
+      flash.now[:alert] = @event.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -23,7 +23,7 @@ class EventsController < ApplicationController
       flash[:notice] = "Event was updated."
       redirect_to events_path
     else
-      flash.now[:alert] = "There was an error updating the event. Please try again."
+      flash.now[:alert] = @event.errors.full_messages.to_sentence
       render :edit
     end
   end
@@ -36,7 +36,7 @@ class EventsController < ApplicationController
       flash[:notice] = "\"#{@event.title}\" was deleted successfully."
       redirect_to events_path
     else
-      flash.now[:alert] = "There was an error deleting the event."
+      flash.now[:alert] = @event.errors.full_messages.to_sentence
       render events_path
     end
   end

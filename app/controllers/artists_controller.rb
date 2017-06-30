@@ -16,7 +16,7 @@ class ArtistsController < ApplicationController
       flash[:notice] = "Artist was saved."
       redirect_to category_path(params[:category_id])
     else
-      flash.now[:alert] = "There was an error saving the artist. Please try again."
+      flash.now[:alert] = @artist.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -36,7 +36,7 @@ class ArtistsController < ApplicationController
       flash[:notice] = "Artist was updated."
       redirect_to category_path(params[:category_id])
     else
-      flash.now[:alert] = "There was an error saving the artist. Please try again."
+      flash.now[:alert] = @artist.errors.full_messages.to_sentence
       render :edit
     end
 
@@ -50,7 +50,7 @@ class ArtistsController < ApplicationController
       flash[:notice] = "\"#{@artist.name}\" was deleted successfully."
       redirect_to category_path(params[:category_id])
     else
-      flash.now[:alert] = "There was an error deleting the artist."
+      flash.now[:alert] = @artist.errors.full_messages.to_sentence
       redirect_to category_path(params[:category_id])
     end
   end

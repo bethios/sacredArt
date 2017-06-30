@@ -233,11 +233,13 @@ div.footer{
 
 .btn-success{
   background-color: $slate;
+  border-color: $slate;
 }
 
 .btn-success:hover{
-  background-color: $background;
+  background-color: $offwhite;
   color: black;
+  border-color: $accent;
 }
 
 .admin-buttons{

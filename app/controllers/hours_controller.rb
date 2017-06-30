@@ -3,7 +3,6 @@ class HoursController < ApplicationController
   before_action :authorize_user, except: :show
   before_action :find_hour, only: [:update, :edit, :show]
 
-
   def index
     @hours = Hour.all
   end
@@ -22,7 +21,8 @@ class HoursController < ApplicationController
     if @hour.update_attributes(hour_params)
       redirect_to admin_path
     else
-      flash[:alert] = 'Error saving hours.'
+      flash[:alert] = @hour.errors.full_messages.to_sentence
+      render :new
     end
   end
 
@@ -33,7 +33,8 @@ class HoursController < ApplicationController
     if @hour.update_attributes(hour_params)
       redirect_to admin_path
     else
-      flash[:alert] = 'Error saving hours.'
+      flash[:alert] = @hour.errors.full_messages.to_sentence
+      render :edit
     end
   end
 
