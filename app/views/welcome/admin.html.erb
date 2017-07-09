@@ -5,6 +5,7 @@
     <%= link_to "Add Event", new_event_path, :class => 'btn btn-success' %>
     <%= link_to "View All Events", events_path, :class => 'btn btn-success' %>
     <%= link_to "Add FAQ", new_faq_path, :class => 'btn btn-success' %>
+    <%= link_to "Update Password", edit_user_path(current_user), :class => 'btn btn-success' %>
   </div>
   <p><strong>Add Artist</strong><br>
   To add an artist go to the applicable <%= link_to "category", categories_path %> and use the Add Artist button there</p>

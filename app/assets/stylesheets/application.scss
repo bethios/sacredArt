@@ -35,6 +35,7 @@ p{
   font-size: $paragraph;
 }
 
+
 .content-container{
   box-sizing: border-box;
   background: $white;
@@ -265,11 +266,16 @@ div.footer{
   .footer-col:not(:last-child){
     border-bottom: none;
   }
+
 }
 
 @media screen and (min-width: 884px) {
   .ion-navicon-round {
     display: none;
+  }
+
+  .remove-padding{
+    padding: 0;
   }
 
   nav {
