@@ -1,6 +1,7 @@
 class FaqsController < ApplicationController
   before_action :require_sign_in, except: :index
   before_action :authorize_user, except: :index
+  before_action :find_faq, only: [:update, :edit, :destroy]
 
   def new
     @faq = Faq.new
@@ -8,40 +9,34 @@ class FaqsController < ApplicationController
 
   def create
     @faq = Faq.new
-    @faq.question = params[:faq][:question]
-    @faq.answer = params[:faq][:answer]
 
-    if @faq.save
+    if @faq.update_attributes(faq_params)
+      flash[:alert] = 'FAQ Saved'
       redirect_to faqs_path
     else
-      flash[:alert] = 'error saving faq'
+      flash[:alert] = @faq.errors.full_messages.to_sentence
+      render :new
     end
   end
 
   def update
-    @faq = Faq.find(params[:id].to_i)
-    @faq.question = params[:faq][:question]
-    @faq.answer = params[:faq][:answer]
-
-    if @faq.save
+    if @faq.update_attributes(faq_params)
       redirect_to faqs_path
     else
-      flash[:alert] = 'error saving faq'
+      flash[:alert] = @faq.errors.full_messages.to_sentence
+      render :edit
     end
   end
 
   def edit
-    @faq = Faq.find(params[:id].to_i)
   end
 
   def destroy
-    @faq = Faq.find(params[:id].t0_i)
-
     if @faq.destroy
       flash[:notice] = "\"#{@faq.question}\" was deleted successfully."
       redirect_to faqs_path
     else
-      flash.now[:alert] = "There was an error deleting the faq."
+      flash.now[:alert] = @faq.errors.full_messages.to_sentence
       render faqs_path
     end
   end
@@ -57,5 +52,13 @@ class FaqsController < ApplicationController
       flash[:alert] = "You must be an admin to do that."
       redirect_to index_path
     end
+  end
+
+  def faq_params
+    params.require(:faq).permit(:question, :answer)
+  end
+
+  def find_faq
+    @faq = Faq.find(params[:id].to_i)
   end
 end

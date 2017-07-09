@@ -1,62 +1,57 @@
 class ArtistsController < ApplicationController
   before_action :require_sign_in
   before_action :authorize_user
+  before_action :find_artist, except: [:new, :create]
+  before_action :find_category
 
   def new
-    @category = Category.find(params[:category_id])
     @artist = Artist.new
   end
 
   def create
     @artist = Artist.new
-    @artist.name = params[:artist][:name]
-    @artist.body = params[:artist][:body]
-    @artist.main_image = params[:artist][:main_image]
-    @artist.image_2 = params[:artist][:image_2]
-    @artist.image_3 = params[:artist][:image_3]
-
-    @category = Category.find(params[:category_id])
     @artist.category_id = params[:category_id]
 
-    if @artist.save
+    if @artist.update_attributes(artist_params)
       flash[:notice] = "Artist was saved."
-      redirect_to [@category]
+      redirect_to category_path(params[:category_id])
     else
-      flash.now[:alert] = "There was an error saving the artist. Please try again."
+      flash.now[:alert] = @artist.errors.full_messages.to_sentence
       render :new
     end
   end
 
   def update
-    @artist = Artist.find(params[:id].to_i)
-    @artist.name = params[:artist][:name]
-    @artist.body = params[:artist][:body]
-    @artist.main_image = params[:artist][:main_image]
-    @artist.image_2 = params[:artist][:image_2]
-    @artist.image_3 = params[:artist][:image_3]
+    if params[:artist][:delete_main] == '1'
+      @artist.main_image = nil
+    end
+    if params[:artist][:delete_image_2] == '1'
+      @artist.image_2 = nil
+    end
+    if params[:artist][:delete_image_3] == '1'
+      @artist.image_3 = nil
+    end
 
-    if @artist.save
+    if @artist.update_attributes(artist_params)
       flash[:notice] = "Artist was updated."
-      redirect_to [@artist.category]
+      redirect_to category_path(params[:category_id])
     else
-      flash.now[:alert] = "There was an error saving the artist. Please try again."
+      flash.now[:alert] = @artist.errors.full_messages.to_sentence
       render :edit
     end
+
   end
 
   def edit
-    @artist = Artist.find(params[:id].to_i)
   end
 
   def destroy
-    @artist = Artist.find(params[:id].to_i)
-
     if @artist.destroy
       flash[:notice] = "\"#{@artist.name}\" was deleted successfully."
-      redirect_to @artist.category
+      redirect_to category_path(params[:category_id])
     else
-      flash.now[:alert] = "There was an error deleting the artist."
-      render @artist.category
+      flash.now[:alert] = @artist.errors.full_messages.to_sentence
+      redirect_to category_path(params[:category_id])
     end
   end
 
@@ -72,4 +67,17 @@ class ArtistsController < ApplicationController
       redirect_to index_path
     end
   end
+
+  def artist_params
+    params.require(:artist).permit(:name, :body, :main_image, :image_2, :image_3)
+  end
+
+  def find_artist
+    @artist = Artist.find(params[:id].to_i)
+  end
+
+  def find_category
+    @category = Category.find(params[:category_id])
+  end
+
 end

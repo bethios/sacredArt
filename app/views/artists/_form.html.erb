@@ -12,18 +12,34 @@
             </div>
           </div>
           <div class="col-sm-6">
-            <div class="form-group">
-              <%= f.label :main_image %>
-              <%= f.file_field :main_image %>
-            </div>
-            <div class="form-group">
-              <%= f.label :image_2 %>
-              <%= f.file_field :image_2 %>
-            </div>
-            <div class="form-group">
-              <%= f.label :image_3 %>
-              <%= f.file_field :image_3 %>
-            </div>
+              <div class="form-group">
+                <%= f.label :main_image %><br>
+                <% if artist.main_image_file_name == nil  %>
+                  <%= f.file_field :main_image %>
+                <% else %>
+                    Delete:
+                    <%= f.check_box :delete_main %><br>
+                    <%= image_tag(artist.main_image.url(:thumb)) %>
+                <% end %>
+              </div>
+              <div class="form-group">
+                <%= f.label :image_2 %><br>
+                  <% if artist.image_2_file_name == nil  %>
+                    <%= f.file_field :image_2 %>
+                  <% else %>
+                    Delete: <%= f.check_box :delete_image_2 %><br>
+                    <%= image_tag(artist.image_2.url(:thumb)) %>
+              <% end %>
+              </div>
+              <div class="form-group">
+                <%= f.label :image_3 %><br>
+                  <% if artist.image_3_file_name == nil  %>
+                    <%= f.file_field :image_3 %>
+                  <% else %>
+                    Delete: <%= f.check_box :delete_image_3 %><br>
+                    <%= image_tag(artist.image_3.url(:thumb)) %>
+              <% end %>
+              </div>
             <div class="form-group">
               <%= f.submit "Save", class: 'btn btn-success' %>
               <%= link_to "Cancel", category_path(category), class: 'btn btn-success' %>

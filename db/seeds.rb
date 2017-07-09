@@ -58,9 +58,3 @@ csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
   Artist.create!(row.to_hash)
 end
-
-puts "#{User.count} users created"
-puts "#{Category.count} categories created"
-puts "#{Faq.count} faqs created"
-puts "#{Hour.count} hours created"
-puts "#{Artist.count} artists created"

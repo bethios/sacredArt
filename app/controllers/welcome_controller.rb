@@ -2,7 +2,6 @@ require 'json'
 
 class WelcomeController < ApplicationController
   include HTTParty
-
   before_action :require_sign_in, only: :admin
   before_action :authorize_user, only: :admin
 

@@ -1,24 +1,27 @@
+@import 'variables';
+
 table{
   width: 90%;
-  margin: 20px;
-  background-color: white;
+  margin: $standard-margin;
+  background-color: $white;
 }
 
 td, th{
   text-align: left;
-  padding: 15px;
-  font-size: 120%;
+  padding: $small-padding;
+  font-size: $paragraph;
 }
 
 th {
-  font-size: 150%;
+  font-size: $focus;
   font-weight: bold;
-  border-bottom: 2px black solid;
+  border-bottom: 2px $blackish solid;
 }
+
 tr:nth-child(even){
-  background-color: #dddddd;
+  background-color: $offwhite;
 }
 
 tr:nth-child(odd){
-  background-color: white;
+  background-color: $white;
 }
