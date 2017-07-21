@@ -108,16 +108,16 @@
 }
 
 #signUpModal{
-  display: none;
+  padding: $standard-padding;
+  display: block;
+  height: 350px;
+  margin: auto;
+  background-color: rgba(255,255,255, 0.9)
 }
 
 @media screen and (min-width: 500px){
   #signUpModal{
-    padding: $standard-padding;
-    width: 50%;
-    height: 350px;
-    margin: auto;
-    background-color: rgba(255,255,255, 0.75)
+    width: 365px;
   }
 
   .instagram-feed{
