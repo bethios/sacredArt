@@ -16,6 +16,11 @@
 //= require bootstrap
 //= require_tree .
 
-$(window).on('load',function(){
-    $('#signUpModal').modal('show');
-});
+function dismiss_modal() {
+    var x = document.getElementById('signUpModal');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
