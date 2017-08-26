@@ -13,10 +13,15 @@
 <body>
 <nav>
   <%= link_to image_tag("sa_logo_small.png", :alt => "Sacred Art Logo", :class => "logo"), index_path %>
-
-  <i class="ion-navicon-round" data-toggle="collapse" data-target="#mobile"></i>
-  <div id="mobile" class="collapse">
-    <ul class="mobile-menu">
+  <div id="menuToggle">
+    <input class='hamburger' type="checkbox"/>
+    <span></span>
+    <span></span>
+    <span></span>
+  <!--<i class="ion-navicon-round hamburger" data-toggle="collapse" data-target="#mobile"></i>-->
+  <!--<div id="mobile" class="collapse"> -->
+    <ul id='menu'> <!--class="mobile-menu" -->
+      <li>  <%= link_to image_tag("sa_logo_small.png", :alt => "Sacred Art Logo", :class => "logo"), index_path %></li>
       <li ><%= link_to "ABOUT", about_path %></li>
       <li ><%= link_to "ARTISTS", categories_path %></li>
       <!-- <li ><%= link_to "SHOP" %></li> -->
@@ -26,6 +31,7 @@
       <li ><%= link_to "CONTACT", contact_path %></li>
     </ul>
   </div>
+  <!--</div> -->
 
   <ul class="nav-links">
     <li class="nav-li"><%= link_to "ABOUT", about_path %></li>
