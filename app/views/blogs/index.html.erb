@@ -1,0 +1,25 @@
+<h2 class="category-banner">Blog</h2>
+<% if current_user && current_user.role == 'admin' %>
+    <div class="admin-buttons">
+      <%= link_to "Add Blog Post", new_blog_path, :class => 'btn btn-success' %>
+    </div>
+<% end %>
+
+<% if Blog.count > 0 %>
+    <% @blogs.each do |blog| %>
+        <div class="content-container blog-post clearfix">
+          <h3><%= sanitize blog.title %></h3>
+          <p><%= sanitize markdown(blog.body) %></p>
+          <div class="admin-buttons">
+            <% if current_user && current_user.role == 'admin' %>
+              <%= link_to "Edit Blog", edit_blog_path(blog.id), class: 'btn btn-success'  %>
+              <%= link_to "Delete Blog", blog, method: :delete, :class => 'btn btn-success' %>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+<% else %>
+    <div class="content-container">
+      <h3>Coming Soon!</h3>
+    </div>
+<% end %>

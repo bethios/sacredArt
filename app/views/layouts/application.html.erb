@@ -25,6 +25,9 @@
       <li ><%= link_to "ABOUT", about_path %></li>
       <li ><%= link_to "ARTISTS", categories_path %></li>
       <!-- <li ><%= link_to "SHOP" %></li> -->
+      <% if Blog.count > 0 && Blog.last.created_at > 30.days.ago %>
+        <li><%= link_to "BLOG", blogs_path %></li>
+      <% end %>
       <li ><%= link_to "NEWS", new_path %></li>
       <li ><%= link_to "FAQ", faqs_path %></li>
       <li ><%= link_to "SUBMISSIONS", submissions_path %></li>
@@ -46,6 +49,9 @@
       </div>
     </li>
     <!-- <li class="nav-li"><%= link_to "SHOP" %></li> -->
+    <% if Blog.count > 0 && Blog.last.created_at > 30.days.ago %>
+      <li class="nav-li"><%= link_to "BLOG", blogs_path %></li>
+    <% end %>
     <li class="nav-li"><%= link_to "NEWS", new_path %></li>
     <li class="nav-li"><%= link_to "FAQ", faqs_path %></li>
     <li class="nav-li"><%= link_to "SUBMISSIONS", submissions_path %></li>
