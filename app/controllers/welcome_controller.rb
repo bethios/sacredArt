@@ -12,8 +12,6 @@ class WelcomeController < ApplicationController
   end
 
   def new
-    response = HTTParty.get("https://api.instagram.com/v1/users/self/media/recent/?access_token=" + Figaro.env.TWITTER_ACCESS_TOKEN )
-    @instagrams = response["data"]
   end
 
   def submissions
