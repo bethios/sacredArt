@@ -1,6 +1,6 @@
 <% if Event.count > 0 %>
   <% Event.all.each do |event| %>
-      <% if event.date >= Time.new + 24*60*60 %>
+      <% if event.date >= Time.new + 48*60*60 %>
           <div class="content-container">
             <h2>Upcoming Event: <%= sanitize event.title %></h2>
             <h3><%= sanitize event.date.to_formatted_s(:long) %></h3>
