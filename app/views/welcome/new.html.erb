@@ -1,12 +1,1 @@
 <%= render partial: 'events/current' %>
-
-<div class="instagram-feed">
-  <% @instagrams.each do |instagram| %>
-      <div class="content-container instagram">
-        <div class="instagram-image-div">
-        <%= link_to image_tag(instagram["images"]["low_resolution"]["url"], :class => 'instagram-image' ), instagram["link"], target: '_blank' %>
-        </div>
-        <p class="instagram-comment"><%= instagram["caption"]["text"] %></p>
-      </div>
-  <% end %>
-</div>

@@ -71,38 +71,6 @@
   min-height: 90vh;
 }
 
-.instagram-feed{
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto;
-  margin: auto;
-  width: 100%;
-}
-
-.instagram-image{
-  min-width: 100%;
-  min-height: 100%;
-  vertical-align: center;
-  display: block;
-}
-
-.instagram-image-div{
-  height: 40vh;
-  overflow: hidden;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.instagram-comment{
-  padding-top: 15px;
-  font-size: $paragraph;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  max-height: 15vh;
-}
-
 .about-images{
   display: inline-block;
 }
@@ -119,10 +87,6 @@
   #signUpModal{
     width: 365px;
   }
-
-  .instagram-feed{
-    grid-template-columns: 50% 50%;
-  }
 }
 
 @media screen and (min-width: 961px) {
@@ -133,15 +97,5 @@
 
   .side-images{
     display: block;
-  }
-
-  .instagram-feed{
-    grid-template-columns: 33% 33% 33%;
-  }
-}
-
-@media screen and (min-width: 1200px){
-  .instagram-feed{
-    grid-template-columns: 25% 25% 25% 25%;
   }
 }
